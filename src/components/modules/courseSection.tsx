@@ -1,7 +1,18 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Target, Lightbulb, Handshake, CheckCircle2 } from "lucide-react";
 
-const specialitiesData = [
+// Define the interface for a single speciality item
+interface SpecialityItemData {
+  title: string;
+  icon: React.ElementType; // Correct type for an icon component
+  description: string[];
+  color: string;
+  lightBg: string;
+  iconColor: string;
+}
+
+const specialitiesData: SpecialityItemData[] = [
   {
     title: "লক্ষ্য",
     icon: Target,
@@ -40,7 +51,13 @@ const specialitiesData = [
   },
 ];
 
-const SpecialityCard = ({ item, index }) => {
+// Define props interface for the card component
+interface SpecialityCardProps {
+  item: SpecialityItemData;
+  index: number;
+}
+
+const SpecialityCard: React.FC<SpecialityCardProps> = ({ item, index }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -52,7 +69,8 @@ const SpecialityCard = ({ item, index }) => {
     >
       {/* Background Gradient Blur (Hover Effect) */}
       <div
-        className={`absolute -inset-0.5 bg-gradient-to-r ${item.color} rounded-2xl blur opacity-20 group-hover:opacity-100 transition duration-500`}
+        // Note: 'bg-linear-to-r' must be defined in your Tailwind config or CSS
+        className={`absolute -inset-0.5 bg-linear-to-r ${item.color} rounded-2xl blur opacity-20 group-hover:opacity-100 transition duration-500`}
       ></div>
 
       <div className="relative h-full bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-xl flex flex-col border border-gray-100 dark:border-slate-800">
@@ -60,6 +78,7 @@ const SpecialityCard = ({ item, index }) => {
           <div
             className={`p-4 rounded-xl ${item.lightBg} ${item.iconColor} transform group-hover:scale-110 transition-transform duration-300`}
           >
+            {/* Render the icon component passed via props */}
             <item.icon className="w-8 h-8" />
           </div>
           <h3 className="ml-4 text-2xl font-bold text-gray-800 dark:text-white">
@@ -83,6 +102,7 @@ const SpecialityCard = ({ item, index }) => {
 
         {/* Bottom Decorative Line */}
         <div
+          // Note: 'bg-linear-to-r' must be defined in your Tailwind config or CSS
           className={`mt-6 h-1 w-0 group-hover:w-full transition-all duration-500 bg-linear-to-r ${item.color} rounded-full`}
         ></div>
       </div>
@@ -90,7 +110,7 @@ const SpecialityCard = ({ item, index }) => {
   );
 };
 
-const CourseSection = () => {
+const CourseSection: React.FC = () => {
   return (
     <section className="relative bg-[#001f5b] dark:bg-[#020617] py-12 overflow-hidden">
       {/* Background Decorative Elements */}
@@ -114,6 +134,7 @@ const CourseSection = () => {
             className="text-4xl font-extrabold text-white mt-3"
           >
             আমাদের{" "}
+            {/* Note: 'bg-linear-to-r' must be defined in your Tailwind config or CSS */}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300">
               বিশেষত্ব
             </span>
