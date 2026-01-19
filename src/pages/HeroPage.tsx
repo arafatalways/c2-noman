@@ -1,3 +1,4 @@
+import Course from "@/components/modules/course";
 import CourseSection from "@/components/modules/courseSection";
 import FAQSection from "@/components/modules/faqSection";
 import Hero from "@/components/modules/hero";
@@ -21,6 +22,7 @@ export default function HeroPage() {
       <Hero />
       <CourseSection />
       {/* <CourseCard course={dummyCourseData} /> */}
+      <Course />
       <FAQSection />
     </div>
   );

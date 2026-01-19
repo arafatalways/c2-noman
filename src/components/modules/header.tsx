@@ -8,13 +8,14 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false); // মেনু ওপেন/ক্লোজ স্টেট
 
   // ছবির সাথে মিল রেখে বাংলা ন্যাভিগেশন লিংক
+
   const navLinks = [
-    { name: "হোমপেজ", path: "/home" },
-    { name: "আমাদের সম্পর্কে", path: "/about" },
+    { name: " মূলপাতা", path: "/home" },
+    { name: "বিভাগ সমূহ", path: "/about" },
+    { name: "প্রবন্ধ ও রচনা", path: "/books" },
     { name: "কোর্সসমূহ", path: "/courses" },
-    { name: "বইসমূহ", path: "/books" },
-    { name: "ব্লগ", path: "/blog" },
-    { name: "আমাদের প্রশিক্ষকগন", path: "/education" },
+    { name: "পরিচিতি", path: "/blog" },
+    { name: "যোগাযোগ", path: "/education" },
   ];
 
   return (
