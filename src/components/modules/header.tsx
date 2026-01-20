@@ -10,11 +10,11 @@ export default function Header() {
   // ছবির সাথে মিল রেখে বাংলা ন্যাভিগেশন লিংক
 
   const navLinks = [
-    { name: " মূলপাতা", path: "/home" },
-    { name: "বিভাগ সমূহ", path: "/about" },
-    { name: "প্রবন্ধ ও রচনা", path: "/books" },
+    { name: " মূলপাতা", path: "/" },
+    { name: "বিভাগ সমূহ", path: "/hero" },
+    { name: "প্রবন্ধ ও রচনা", path: "/faq" },
     { name: "কোর্সসমূহ", path: "/courses" },
-    { name: "পরিচিতি", path: "/blog" },
+    { name: "পরিচিতি", path: "/about" },
     // { name: "যোগাযোগ", path: "/education" },
   ];
 
@@ -54,7 +54,7 @@ export default function Header() {
             <div className="flex items-center gap-3">
               {/* স্টুডেন্ট একাউন্ট বাটন: ছবির কালার #2A4976 */}
               <Link
-                to="/login"
+                to="/contact"
                 className="hidden sm:block rounded-lg bg-[#0084D1] px-6 py-2 text-white font-semibold shadow-md hover:bg-[#315382] transition duration-200"
               >
                 যোগাযোগ
@@ -119,10 +119,10 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              to="/login"
+              to="/contact"
               className="block w-full text-center rounded-lg bg-[#2A4976] py-2 text-white font-semibold mt-4 hover:bg-[#315382] transition duration-200"
             >
-              স্টুডেন্ট একাউন্ট
+              যোগাযোগ
             </Link>
           </nav>
         </div>

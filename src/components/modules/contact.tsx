@@ -36,7 +36,10 @@ export default function ContactSection() {
             <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200 mb-2">
               {t("phone", "মোবাইল")}
             </h3>
-            <p className="text-gray-600 dark:text-gray-400">+880 1550 708690</p>
+            <p className="text-gray-600 dark:text-gray-400">
+              {" "}
+              +880 1883-595268
+            </p>
           </div>
 
           {/* EMAIL */}
@@ -45,7 +48,9 @@ export default function ContactSection() {
             <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200 mb-2">
               {t("email", "ইমেইল")}
             </h3>
-            <p className="text-gray-600 dark:text-gray-400">info@ilmweb.net</p>
+            <p className="text-gray-600 dark:text-gray-400">
+              annahdaislamicademy@gmail.com
+            </p>
           </div>
 
           {/* WEBSITE */}
@@ -55,10 +60,10 @@ export default function ContactSection() {
               {t("website", "ওয়েবসাইট")}
             </h3>
             <a
-              href="https://www.ilmweb.net"
+              href="https://c2-noman-ia6o.vercel.app/"
               className="text-indigo-600 hover:underline"
             >
-              www.ilmweb.net
+              https://c2-noman-ia6o.vercel.app/
             </a>
           </div>
 

@@ -14,12 +14,11 @@ interface SpecialityItemData {
 
 const specialitiesData: SpecialityItemData[] = [
   {
-    title: "লক্ষ্য",
+    title: "লক্ষ্য উদ্দেশ্য",
     icon: Target,
     description: [
-      "শিক্ষকদের জন্য আধুনিক শিক্ষাদান কৌশল প্রদান করা।",
-      "মাদ্রাসা ও প্রতিষ্ঠানের ব্যবস্থাপনায় দক্ষতা বৃদ্ধি করা।",
-      "শিক্ষা সিলেবাস ও কারিকুলাম সংক্রান্ত গবেষণা ও উন্নয়ন।",
+      "আদর্শ, নৈতিকতা ও ঈমানভিত্তিক একটি যুগ-সচেতন প্রজন্ম গড়ে তোলাই আমাদের মূল লক্ষ্য।",
+      "কুরআন ও সুন্নাহর আলোকে আধুনিনাক একাডেমিক শিক্ষা ও প্রয়োজনীয় দক্ষতার সমন্বয়ে আমরা শিক্ষার্থীদের ভবিষ্যতের জন্য প্রস্তুত করি—ইনশা আল্লাহ।",
     ],
     color: "from-pink-500 to-rose-500",
     lightBg: "bg-pink-50 dark:bg-pink-900/20",
@@ -29,9 +28,8 @@ const specialitiesData: SpecialityItemData[] = [
     title: "মূল্যবোধ",
     icon: Handshake,
     description: [
-      "সততা: সব কাজেই স্বচ্ছতার প্রতি সর্বোচ্চ গুরুত্ব।",
-      "দক্ষতা: পরিচালক ও শিক্ষকদের মান উন্নয়নে নিরন্তর কাজ।",
-      "সৃজনশীলতা: শিক্ষাদানে নতুন পদ্ধতি ও ধারণা নিয়ে কাজ।",
+      "ইসলামী আদর্শ, সততা ও শালীনতার উপর দাঁড়িয়ে আমরা মানসম্মত শিক্ষা, শৃঙ্খলা এবং দায়িত্বশীলতা গড়ে তোলায় বিশ্বাস করি।",
+      " Deen ও Dunya-র মধ্যে ভারসাম্য বজায় রেখে শিক্ষার্থীদের পূর্ণাঙ্গ মানুষ হিসেবে তৈরি করাই আমাদের অঙ্গীকার।",
     ],
     color: "from-blue-500 to-cyan-500",
     lightBg: "bg-blue-50 dark:bg-blue-900/20",
@@ -41,9 +39,8 @@ const specialitiesData: SpecialityItemData[] = [
     title: "সেবা",
     icon: Lightbulb,
     description: [
-      "শিক্ষক প্রশিক্ষণ কর্মশালা ও কারিকুলাম উন্নয়ন।",
-      "প্রতিষ্ঠান ব্যবস্থাপনা সম্পর্কিত পরামর্শ সেবা।",
-      "অনলাইন শিক্ষা সমর্থন ও উদ্ভাবনী প্ল্যাটফর্ম।",
+      "কুরআন ও ইসলামিক স্টাডিজ ভিত্তিক শিক্ষা আধুনিক ও মানসম্মত একাডেমিক কারিকুলাম",
+      "নৈতিকতা ও চরিত্র গঠনমূলক কার্যক্রম	দক্ষতা উন্নয়ন ও যুগোপযোগী স্কিল ট্রেনিং	অভিভাবক-বান্ধব ও শৃঙ্খলাপূর্ণ শিক্ষাপরিবেশ",
     ],
     color: "from-orange-500 to-amber-500",
     lightBg: "bg-orange-50 dark:bg-orange-900/20",
@@ -110,7 +107,7 @@ const SpecialityCard: React.FC<SpecialityCardProps> = ({ item, index }) => {
   );
 };
 
-const CourseSection: React.FC = () => {
+const About: React.FC = () => {
   return (
     <section className="relative bg-[#FFFDFA] dark:bg-[#262E40] py-12 overflow-hidden">
       {/* Background Decorative Elements */}
@@ -121,17 +118,17 @@ const CourseSection: React.FC = () => {
 
       <div className="my-container relative z-10">
         <div className="text-center mb-16">
-          <motion.span
+          {/* <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-blue-400 font-semibold tracking-widest uppercase text-sm"
           >
             কেন আমাদের পছন্দ করবেন?
-          </motion.span>
+          </motion.span> */}
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl font-extrabold text-white mt-3"
+            className="text-4xl font-extrabold dark:text-white mt-3"
           >
             আমাদের{" "}
             {/* Note: 'bg-linear-to-r' must be defined in your Tailwind config or CSS */}
@@ -152,4 +149,4 @@ const CourseSection: React.FC = () => {
   );
 };
 
-export default CourseSection;
+export default About;

@@ -1,10 +1,12 @@
 // src/components/modules/footer.tsx
 
 import React from "react";
-import { Facebook, Twitter, Linkedin } from "lucide-react";
+import { FaFacebook } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
-
+import { FaWhatsapp } from "react-icons/fa";
 interface LinkItem {
   title: string;
   href: string;
@@ -17,28 +19,32 @@ interface SocialLinkItem {
 }
 
 const footerLinks: LinkItem[] = [
-  { title: "আমাদের সম্পর্কে", href: "#" },
-  { title: "গোপনীয়তা নীতি", href: "#" },
-  { title: "শর্তাবলী", href: "#" },
-  { title: "সাধারণ জিজ্ঞাসা", href: "#" },
-  { title: "নিবন্ধন করবেন যেভাবে", href: "#" },
+  { title: "আমাদের সম্পর্কে", href: "/about" },
+  { title: "কোর্সসমূহ", href: "/courses" },
+  { title: "প্রবন্ধ ও রচনা", href: "/faq" },
+  { title: "সাধারণ জিজ্ঞাসা", href: "contact" },
 ];
 
 const socialLinks: SocialLinkItem[] = [
   {
-    icon: <Facebook size={18} />,
-    href: "https://facebook.com",
-    color: "bg-blue-600 hover:bg-blue-700",
-  },
-  {
-    icon: <Twitter size={18} />,
-    href: "https://twitter.com",
-    color: "bg-sky-500 hover:bg-sky-600",
-  },
-  {
-    icon: <Linkedin size={18} />,
+    icon: <FaWhatsapp size={18} />,
     href: "https://linkedin.com",
-    color: "bg-blue-700 hover:bg-blue-800",
+    color: "bg-[#21C063] hover:bg-[#21C063]",
+  },
+  {
+    icon: <FaFacebook size={18} />,
+    href: "https://facebook.com",
+    color: "bg-[#0866FF] hover:bg-[#0866FF]",
+  },
+  {
+    icon: <FaYoutube size={18} />,
+    href: "https://twitter.com",
+    color: "bg-[#FF0033] hover:bg-[#FF0033]",
+  },
+  {
+    icon: <MdEmail size={18} />,
+    href: "https://twitter.com",
+    color: "bg-[#FBBC04] hover:bg-[##FBBC04]",
   },
 ];
 
@@ -55,21 +61,11 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <div className="flex items-center gap-3">
-              <div className="">
-                <img className="w-26" src="../logo.png" alt="logo" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-                মুয়াল্লিমিন একাডেমি
-              </h3>
+            <div className="flex items-center">
+              <img className="w-32" src="../logo.png" alt="logo" />
             </div>
 
-            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-              একটি টেকসই ও আধুনিক শিক্ষাব্যবস্থা গড়ে তুলতে নিবেদিত একটি শিক্ষা
-              উদ্যোগ।
-            </p>
-
-            <div className="flex gap-3 pt-2">
+            <div className="flex gap-3">
               {socialLinks.map((social, i) => (
                 <motion.a
                   key={i}
@@ -97,12 +93,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm">
               {footerLinks.map((link) => (
                 <li key={link.title}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="relative text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full"
                   >
                     {link.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -121,12 +117,12 @@ const Footer: React.FC = () => {
 
             <p className="text-sm text-gray-600 dark:text-gray-400">ইমেইল</p>
             <p className="font-medium text-gray-800 dark:text-white">
-              muallimeenacademy@gmail.com
+              annahdaislamicademy@gmail.com
             </p>
 
             <p className="text-sm text-gray-600 dark:text-gray-400">মোবাইল</p>
             <p className="font-medium text-gray-800 dark:text-white">
-              01836096651
+              +880 1883-595268
             </p>
           </motion.div>
 

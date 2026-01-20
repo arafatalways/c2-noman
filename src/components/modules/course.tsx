@@ -1,8 +1,6 @@
-// src/CourseSection.tsx
-
 import React from "react";
 import { motion } from "framer-motion";
-import { BookOpen, Users, ArrowRight } from "lucide-react";
+import { BookOpen, Users, ArrowRight } from "lucide-react"; // DollarSign আইকন যোগ করা হয়েছে
 
 // Define the interface for a course item
 interface CourseItemData {
@@ -15,41 +13,46 @@ interface CourseItemData {
   type: string;
   price: string;
   imageAlt: string;
+  imageUrl: string; // ইমেজের URL বা পাথ যুক্ত করা হয়েছে
 }
 
+// আপনার পাবলিক ফোল্ডারের ইমেজ পাথ দিয়ে ডেটা আপডেট করা হলো
 const coursesData: CourseItemData[] = [
   {
     id: 1,
     title: "রিডিং শেখার তরিকা",
     subtitle: "(Learn How to Read)",
-    academy: "Muallimeen Academy",
+    academy: "An Nahda Academy",
     lessons: 6,
     students: 16,
     type: "রেকর্ডেড কোর্স",
     price: "৳৮২০০",
     imageAlt: "Reading course thumbnail",
+    imageUrl: "../course-1.png", // এখানে আপনার আসল ইমেজের পাথ দিন
   },
   {
     id: 2,
     title: "শিক্ষক সার্টিফিকেশন কোর্স",
     subtitle: "(Teachers Certification Course)",
-    academy: "Muallimeen Academy",
+    academy: "An Nahda Academy",
     lessons: 10,
     students: 137,
     type: "লাইভ কোর্স",
     price: "৳৮৫০০",
     imageAlt: "Teacher certification course thumbnail",
+    imageUrl: "../course-2.png", // এখানে আপনার আসল ইমেজের পাথ দিন
   },
   {
     id: 3,
     title: "নূরানী মুয়াল্লিম ট্রেনিং",
     subtitle: "(Noorani Muallim Training)",
-    academy: "Muallimeen Academy",
+    academy: "An Nahda Academy",
     lessons: 6,
     students: 41,
     type: "রেকর্ডেড কোর্স",
     price: "৳৮৬০০",
     imageAlt: "Noorani training course thumbnail",
+    imageUrl: "../course-3.png", // এখানে আপনার আসল ইমেজের পাথ দিন
   },
 ];
 
@@ -66,25 +69,28 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.15 }}
       viewport={{ once: true }}
-      // Enhanced hover effect with shadow glow and lift
-      whileHover={{ y: -8, boxShadow: "0 15px 30px rgba(0, 100, 255, 0.15)" }}
-      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 border border-gray-100 dark:border-gray-700"
+      // ছবির কার্ডের মতো হুবহু ডিজাইন ও শ্যাডো
+      whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)" }}
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-300 border border-gray-100 dark:border-gray-700"
     >
       {/* Image/Thumbnail Area (Placeholder) */}
-      <div className="h-40 bg-linear-to-r from-blue-50 to-teal-50 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center relative">
-        <span className="text-gray-500 dark:text-gray-400">
-          {course.imageAlt} Placeholder
-        </span>
-        <div className="absolute top-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+      <div className="h-48 p-6 relative overflow-hidden">
+        {/* ইমেজের জন্য img ট্যাগ ব্যবহার করা হয়েছে */}
+        <img
+          src={course.imageUrl}
+          alt={course.imageAlt}
+          className="w-full rounded-sm h-full object-cover"
+        />
+        <div className="absolute top-3 right-3 bg-gray-300 dark:bg-white text-black px-3 rounded-full text-xs font-semibold shadow-md">
           {course.type}
         </div>
       </div>
 
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+      <div className="px-6 pb-6">
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
           {course.title}
         </h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
           {course.subtitle}
         </p>
 
@@ -101,16 +107,16 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
             <Users className="w-4 h-4 text-blue-500" /> {course.students}{" "}
             স্টুডেন্ট
           </div>
-          {/* Removed the redundant 'type' display here for cleaner look */}
         </div>
 
         {/* Price and Button */}
         <div className="flex justify-between items-center">
-          <span className="text-3xl font-extrabold text-teal-600 dark:text-teal-400">
+          <span className="text-3xl font-extrabold text-teal-600 dark:text-teal-400 flex items-center">
+            {/* <DollarSign className="w-6 h-6 mr-1""")/>>  টাকার আইকন চাইলে ব্যবহার করতে পারেন */}
             {course.price}
           </span>
-          {/* Enhanced button design with gradient and icon */}
-          <button className="bg-linear-to-r from-blue-600 to-teal-500 text-white px-2 py-2 rounded-lg shadow-md hover:from-blue-700 hover:to-teal-600 transition duration-300 flex items-center gap-1">
+          {/* Enhanced button design with a flat, modern look */}
+          <button className="bg-blue-600 text-white px-2 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-300 flex items-center gap-1">
             বিস্তারিত দেখুন <ArrowRight className="w-4 h-4" />
           </button>
         </div>
@@ -121,7 +127,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
 
 const Course: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section className="py-20 bg-gray-200 dark:bg-gray-800">
       <div className="my-container">
         {/* Enhanced Header Section with animation */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
@@ -137,7 +143,7 @@ const Course: React.FC = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-linear-to-r from-blue-500 to-teal-400 text-white px-8 py-3 rounded-lg shadow-xl hover:opacity-90 transition duration-300 font-semibold"
+            className="bg-blue-500 text-white px-8 py-3 rounded-lg shadow-xl hover:bg-blue-600 transition duration-300 font-semibold"
           >
             সকল কোর্স সমূহ
           </motion.button>
