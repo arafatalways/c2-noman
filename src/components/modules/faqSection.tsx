@@ -99,7 +99,7 @@ const FAQSection: React.FC = () => {
   // State for dark mode, defaulting to system preference
 
   return (
-    <div className=" bg-bg-light dark:bg-bg-dark transition-colors duration-300 p-4 sm:p-8">
+    <div className=" bg-bg-light dark:bg-gray-700 transition-colors duration-300 p-4 sm:p-8">
       <div className="my-container">
         <header className="flex justify-center items-center flex-col mb-10">
           {/* Placeholder for the logo/icon from the image */}

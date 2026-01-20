@@ -15,18 +15,18 @@ export default function Header() {
     { name: "প্রবন্ধ ও রচনা", path: "/books" },
     { name: "কোর্সসমূহ", path: "/courses" },
     { name: "পরিচিতি", path: "/blog" },
-    { name: "যোগাযোগ", path: "/education" },
+    // { name: "যোগাযোগ", path: "/education" },
   ];
 
   return (
     // হেডার সেকশন: ছবির ব্যাকগ্রাউন্ড কালার এবং ডার্ক মোড কালার
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[#FFF1D8] backdrop-blur-lg transition-all duration-300 dark:border-gray-800 dark:bg-gray-950/70">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[#FFF1D8] backdrop-blur-lg transition-all duration-300 dark:border-gray-800 dark:bg-gray-800">
       <div className="my-container">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-12">
             <Link className="flex items-center gap-2 text-teal-600" to="/">
               <span className="hidden text-xl font-bold text-gray-900 dark:text-white sm:block">
-                <img className="w-20" src="../logo.png" alt="logo" />
+                <img className="w-26" src="../logo.png" alt="logo" />
               </span>
             </Link>
           </div>
@@ -55,9 +55,9 @@ export default function Header() {
               {/* স্টুডেন্ট একাউন্ট বাটন: ছবির কালার #2A4976 */}
               <Link
                 to="/login"
-                className="hidden sm:block rounded-lg bg-[#2A4976] px-6 py-2 text-white font-semibold shadow-md hover:bg-[#315382] transition duration-200"
+                className="hidden sm:block rounded-lg bg-[#0084D1] px-6 py-2 text-white font-semibold shadow-md hover:bg-[#315382] transition duration-200"
               >
-                স্টুডেন্ট একাউন্ট
+                যোগাযোগ
               </Link>
               <ModeToggle />
             </div>

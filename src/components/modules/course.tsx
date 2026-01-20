@@ -110,7 +110,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
             {course.price}
           </span>
           {/* Enhanced button design with gradient and icon */}
-          <button className="bg-linear-to-r from-blue-600 to-teal-500 text-white px-3 py-2 rounded-lg shadow-md hover:from-blue-700 hover:to-teal-600 transition duration-300 flex items-center gap-1">
+          <button className="bg-linear-to-r from-blue-600 to-teal-500 text-white px-2 py-2 rounded-lg shadow-md hover:from-blue-700 hover:to-teal-600 transition duration-300 flex items-center gap-1">
             বিস্তারিত দেখুন <ArrowRight className="w-4 h-4" />
           </button>
         </div>
@@ -119,9 +119,9 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
   );
 };
 
-const CourseSection: React.FC = () => {
+const Course: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="my-container">
         {/* Enhanced Header Section with animation */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
@@ -154,4 +154,4 @@ const CourseSection: React.FC = () => {
   );
 };
 
-export default CourseSection;
+export default Course;

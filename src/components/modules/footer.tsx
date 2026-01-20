@@ -3,6 +3,7 @@
 import React from "react";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 interface LinkItem {
   title: string;
@@ -55,7 +56,9 @@ const Footer: React.FC = () => {
             className="space-y-4"
           >
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-linear-to-r from-blue-500 to-indigo-500 shadow-lg"></div>
+              <div className="">
+                <img className="w-26" src="../logo.png" alt="logo" />
+              </div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                 মুয়াল্লিমিন একাডেমি
               </h3>
@@ -148,12 +151,12 @@ const Footer: React.FC = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-[#020617]/70 backdrop-blur">
         <div className="max-w-7xl mx-auto px-6 py-5 text-center">
-          <p className="text-xs text-gray-600 dark:text-gray-400">
-            © 2025 Muallimeen Academy • Developed by Sakib Binnesar
-          </p>
-          <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
-            Coordinated by Zubayr Ahmad Saqib
-          </p>
+          <Link to={"https://www.linkedin.com/in/arafatalways1/"}>
+            <p className="text-xs text-gray-600 dark:text-gray-400">
+              © 2026 An Nahda Academy • Developed by{" "}
+              <u className="">Yeasin Arafat</u>
+            </p>
+          </Link>
         </div>
       </div>
     </footer>

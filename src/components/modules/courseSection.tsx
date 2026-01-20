@@ -112,7 +112,7 @@ const SpecialityCard: React.FC<SpecialityCardProps> = ({ item, index }) => {
 
 const CourseSection: React.FC = () => {
   return (
-    <section className="relative bg-[#001f5b] dark:bg-[#020617] py-12 overflow-hidden">
+    <section className="relative bg-[#FFFDFA] dark:bg-[#262E40] py-12 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
