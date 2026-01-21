@@ -152,7 +152,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
 
 const Course: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-200 dark:bg-gray-800 overflow-hidden">
+    <section className="py-20 bg-white dark:bg-gray-800 overflow-hidden">
       <div className="my-container">
         {/* Header (About style motion) */}
         <div className="text-center mb-16">

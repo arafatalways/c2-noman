@@ -1,14 +1,41 @@
-import {
-  Phone,
-  Mail,
-  Globe,
-  Facebook,
-  Twitter,
-  Youtube,
-  Instagram,
-} from "lucide-react";
+import { MdMarkEmailUnread } from "react-icons/md";
+import { FaFacebook, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
+import { FaPhoneAlt } from "react-icons/fa";
+import { CgWebsite } from "react-icons/cg";
+
+// ✅ SocialLinkItem টাইপ
+interface SocialLinkItem {
+  icon: React.ReactNode;
+  href: string;
+  color: string;
+}
+
+const socialLinks: SocialLinkItem[] = [
+  {
+    icon: <FaWhatsapp size={18} />,
+    href: "https://linkedin.com",
+    color: "bg-[#21C063] hover:bg-[#21C063]",
+  },
+  {
+    icon: <FaFacebook size={18} />,
+    href: "https://facebook.com",
+    color: "bg-[#0866FF] hover:bg-[#0866FF]",
+  },
+  {
+    icon: <FaYoutube size={18} />,
+    href: "https://twitter.com",
+    color: "bg-[#FF0033] hover:bg-[#FF0033]",
+  },
+  {
+    icon: <MdEmail size={18} />,
+    href: "https://twitter.com",
+    color: "bg-[#FBBC04] hover:bg-[#FBBC04]",
+  },
+];
 
 export default function ContactSection() {
   const { t } = useTranslation();
@@ -33,19 +60,17 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* PHONE */}
           <div className="flex flex-col items-center">
-            <Phone className="w-8 h-8 text-indigo-600 mb-4" />
+            <FaPhoneAlt className="w-8 h-8 text-indigo-600 mb-4" />
+
             <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200 mb-2">
               {t("phone", "মোবাইল")}
             </h3>
-            <p className="text-gray-600 dark:text-gray-400">
-              {" "}
-              +880 1883-595268
-            </p>
+            <p className="text-gray-600 dark:text-gray-400">+880 1883-595268</p>
           </div>
 
           {/* EMAIL */}
           <div className="flex flex-col items-center">
-            <Mail className="w-8 h-8 text-indigo-600 mb-4" />
+            <MdMarkEmailUnread className="w-8 h-8 text-[#FBBC04] mb-4" />
             <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200 mb-2">
               {t("email", "ইমেইল")}
             </h3>
@@ -56,7 +81,7 @@ export default function ContactSection() {
 
           {/* WEBSITE */}
           <div className="flex flex-col items-center">
-            <Globe className="w-8 h-8 text-indigo-600 mb-4" />
+            <CgWebsite className="w-8 h-8 text-[#005484] mb-4" />
             <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200 mb-2">
               {t("website", "ওয়েবসাইট")}
             </h3>
@@ -70,24 +95,23 @@ export default function ContactSection() {
 
           {/* SOCIAL */}
           <div className="flex flex-col items-center">
-            <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200 mb-4">
+            <div className="flex gap-3">
+              {socialLinks.map((social, i) => (
+                <motion.a
+                  key={i}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ y: -4 }}
+                  className={`w-9 h-9 flex items-center justify-center rounded-full text-white shadow-md transition ${social.color}`}
+                >
+                  {social.icon}
+                </motion.a>
+              ))}
+            </div>
+            <h3 className="font-semibold text-lg my-5 text-gray-800 dark:text-gray-200 mb-4">
               {t("social", "সোশ্যাল মিডিয়া")}
             </h3>
-
-            <div className="flex gap-4 text-gray-500">
-              <Link to="#" className="hover:text-indigo-600">
-                <Facebook />
-              </Link>
-              <Link to="#" className="hover:text-indigo-600">
-                <Twitter />
-              </Link>
-              <Link to="#" className="hover:text-indigo-600">
-                <Youtube />
-              </Link>
-              <Link to="#" className="hover:text-indigo-600">
-                <Instagram />
-              </Link>
-            </div>
           </div>
         </div>
       </div>

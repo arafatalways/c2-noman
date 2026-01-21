@@ -95,7 +95,7 @@ const ArticleSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 bg-gray-100 dark:bg-gray-900 overflow-hidden">
+    <section className="py-12 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="my-container">
         {/* Header */}
         <motion.h2

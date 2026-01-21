@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ModeToggle } from "@/components/dark-mode/mode-toggle";
 import { X } from "lucide-react"; // X আইকন ইমপোর্ট করা হয়েছে ক্লোজ বাটনের জন্য
 import { Transition } from "@headlessui/react"; // Headless UI Transition ইমপোর্ট করা হয়েছে
+import { FaSearch } from "react-icons/fa";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false); // মেনু ওপেন/ক্লোজ স্টেট
@@ -22,31 +23,34 @@ export default function Header() {
     // হেডার সেকশন: ছবির ব্যাকগ্রাউন্ড কালার এবং ডার্ক মোড কালার
     <header className="sticky my-container top-4 z-50 border-b border-gray-200 bg-[#FFFFFF] backdrop-blur-lg transition-all duration-300 dark:border-[#262E40] dark:bg-[#262E40] rounded-xl shadow-md">
       <div className="my-container">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           <div className="flex items-center gap-12">
             <Link className="flex items-center gap-2 text-teal-600" to="/">
               <span className="hidden text-xl font-bold text-gray-900 dark:text-white sm:block">
-                <img className="w-26" src="../logo.png" alt="logo" />
+                <img className="w-28" src="../logo.png" alt="logo" />
               </span>
             </Link>
           </div>
 
           {/* Desktop Links (md স্ক্রিন থেকে দেখাবে) */}
           <div className="hidden lg:block">
-            <nav>
-              <ul className="flex items-center gap-6 text-sm font-medium">
-                {navLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      to={link.path}
-                      className="text-[#001f5b] hover:text-[#2A4976] dark:text-gray-300 dark:hover:text-white transition duration-200"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            <div className="ml-50 flex items-center gap-2.5">
+              <FaSearch />
+              <nav>
+                <ul className="flex items-center gap-6 text-lg font-bold">
+                  {navLinks.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        to={link.path}
+                        className="text-[#001f5b] hover:text-[#2A4976] dark:text-gray-300 dark:hover:text-white transition duration-200"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
           </div>
 
           <div className="flex items-center gap-4">

@@ -98,7 +98,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-bg-light dark:bg-gray-700 transition-colors duration-300 p-4 sm:p-8">
+    <section className="bg-white dark:bg-gray-700 transition-colors duration-300 p-4 sm:p-8">
       <div className="my-container mb-4">
         <header className="flex flex-col items-center mb-10">
           <div className="w-12 h-12 bg-orange-400 rounded-full mb-3 flex items-center justify-center shadow-md">

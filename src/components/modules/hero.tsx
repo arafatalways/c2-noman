@@ -44,10 +44,6 @@ export default function HeroSection() {
               />
             </div>
 
-            <p className="text-sm text-blue-300 mb-3 font-medium">
-              শুরু হোক জ্ঞানার্জন এখান থেকেই
-            </p>
-
             <h1 className="text-4xl font-bold text-[#06384E] mb-5 leading-tight">
               আন নাহ্দা ইসলামিক <br /> ইনস্টিটিউট…
             </h1>

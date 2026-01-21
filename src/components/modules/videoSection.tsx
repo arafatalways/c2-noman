@@ -21,7 +21,7 @@ const gradients = [
 
 export default function VideoSection() {
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section className="py-16 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="my-container text-center">
         {/* 🔹 Header */}
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
