@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { BookOpen, Users, ArrowRight } from "lucide-react"; // DollarSign আইকন যোগ করা হয়েছে
+import { BookOpen, Users, ArrowRight } from "lucide-react";
 
-// Define the interface for a course item
 interface CourseItemData {
   id: number;
   title: string;
@@ -13,10 +12,9 @@ interface CourseItemData {
   type: string;
   price: string;
   imageAlt: string;
-  imageUrl: string; // ইমেজের URL বা পাথ যুক্ত করা হয়েছে
+  imageUrl: string;
 }
 
-// আপনার পাবলিক ফোল্ডারের ইমেজ পাথ দিয়ে ডেটা আপডেট করা হলো
 const coursesData: CourseItemData[] = [
   {
     id: 1,
@@ -28,7 +26,7 @@ const coursesData: CourseItemData[] = [
     type: "রেকর্ডেড কোর্স",
     price: "৳৮২০০",
     imageAlt: "Reading course thumbnail",
-    imageUrl: "../course-1.png", // এখানে আপনার আসল ইমেজের পাথ দিন
+    imageUrl: "../course-1.png",
   },
   {
     id: 2,
@@ -40,7 +38,7 @@ const coursesData: CourseItemData[] = [
     type: "লাইভ কোর্স",
     price: "৳৮৫০০",
     imageAlt: "Teacher certification course thumbnail",
-    imageUrl: "../course-2.png", // এখানে আপনার আসল ইমেজের পাথ দিন
+    imageUrl: "../course-2.png",
   },
   {
     id: 3,
@@ -52,74 +50,101 @@ const coursesData: CourseItemData[] = [
     type: "রেকর্ডেড কোর্স",
     price: "৳৮৬০০",
     imageAlt: "Noorani training course thumbnail",
-    imageUrl: "../course-3.png", // এখানে আপনার আসল ইমেজের পাথ দিন
+    imageUrl: "../course-3.png",
   },
 ];
 
-// Define props interface for the card component
 interface CourseCardProps {
   course: CourseItemData;
   index: number;
 }
 
+const gradients = [
+  {
+    glow: "from-blue-500 to-cyan-400",
+    icon: "text-blue-500",
+    price: "text-blue-600 dark:text-blue-400",
+  },
+  {
+    glow: "from-emerald-500 to-green-400",
+    icon: "text-emerald-500",
+    price: "text-emerald-600 dark:text-emerald-400",
+  },
+  {
+    glow: "from-orange-500 to-amber-400",
+    icon: "text-orange-500",
+    price: "text-orange-600 dark:text-orange-400",
+  },
+];
+
 const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
+  const color = gradients[index % gradients.length];
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
       viewport={{ once: true }}
-      // ছবির কার্ডের মতো হুবহু ডিজাইন ও শ্যাডো
-      whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)" }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-300 border border-gray-100 dark:border-gray-700"
+      whileHover={{ y: -10 }}
+      className="relative group h-full"
     >
-      {/* Image/Thumbnail Area (Placeholder) */}
-      <div className="h-48 p-6 relative overflow-hidden">
-        {/* ইমেজের জন্য img ট্যাগ ব্যবহার করা হয়েছে */}
-        <img
-          src={course.imageUrl}
-          alt={course.imageAlt}
-          className="w-full rounded-sm h-full object-cover"
-        />
-        <div className="absolute top-3 right-3 bg-gray-300 dark:bg-white text-black px-3 rounded-full text-xs font-semibold shadow-md">
-          {course.type}
-        </div>
-      </div>
+      {/* 🔥 Glow (same design, fixed rounding issue) */}
+      <div
+        className={`absolute -inset-0.5 bg-linear-to-r ${color.glow} rounded-2xl blur opacity-20 group-hover:opacity-100 transition duration-500`}
+      />
 
-      <div className="px-6 pb-6">
+      {/* 🧱 Card */}
+      <div className="relative h-full bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xl flex flex-col border border-gray-100 dark:border-slate-800 overflow-hidden">
+        {/* 📷 Image */}
+        <div className="relative h-48 mb-5 overflow-hidden rounded-xl">
+          <img
+            src={course.imageUrl}
+            alt={course.imageAlt}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <span className="absolute top-3 right-3 bg-white dark:bg-gray-100 text-gray-900 px-3 py-1 rounded-full text-xs font-semibold shadow">
+            {course.type}
+          </span>
+        </div>
+
+        {/* 📄 Content */}
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
           {course.title}
         </h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
           {course.subtitle}
         </p>
 
-        {/* Academy and Metadata */}
-        <div className="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-4 border-b pb-4 border-gray-200 dark:border-gray-700">
-          <span className="font-medium">{course.academy}</span>
+        <div className="text-sm text-gray-600 dark:text-gray-400 mb-4 border-b pb-3 border-gray-200 dark:border-gray-700">
+          {course.academy}
         </div>
 
-        <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-500 mb-5">
+        <div className="flex justify-between text-sm text-gray-500 mb-5">
           <div className="flex items-center gap-2">
-            <BookOpen className="w-4 h-4 text-blue-500" /> {course.lessons} লেসন
+            <BookOpen className={`w-4 h-4 ${color.icon}`} />
+            {course.lessons} লেসন
           </div>
           <div className="flex items-center gap-2">
-            <Users className="w-4 h-4 text-blue-500" /> {course.students}{" "}
-            স্টুডেন্ট
+            <Users className={`w-4 h-4 ${color.icon}`} />
+            {course.students} স্টুডেন্ট
           </div>
         </div>
 
-        {/* Price and Button */}
-        <div className="flex justify-between items-center">
-          <span className="text-3xl font-extrabold text-teal-600 dark:text-teal-400 flex items-center">
-            {/* <DollarSign className="w-6 h-6 mr-1""")/>>  টাকার আইকন চাইলে ব্যবহার করতে পারেন */}
+        {/* 💰 Price + Button */}
+        <div className="mt-auto flex justify-between items-center">
+          <span className={`text-3xl font-extrabold ${color.price}`}>
             {course.price}
           </span>
-          {/* Enhanced button design with a flat, modern look */}
-          <button className="bg-blue-600 text-white px-2 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-300 flex items-center gap-1">
+          <button className="bg-blue-600 text-white px-3 py-2 rounded-md shadow hover:bg-blue-700 transition flex items-center gap-1">
             বিস্তারিত দেখুন <ArrowRight className="w-4 h-4" />
           </button>
         </div>
+
+        {/* 🌈 Bottom hover line */}
+        <div
+          className={`mt-6 h-1 w-0 group-hover:w-full transition-all duration-500 bg-linear-to-r ${color.glow} rounded-full`}
+        />
       </div>
     </motion.div>
   );
@@ -127,30 +152,25 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
 
 const Course: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-200 dark:bg-gray-800">
+    <section className="py-20 bg-gray-200 dark:bg-gray-800 overflow-hidden">
       <div className="my-container">
-        {/* Enhanced Header Section with animation */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-12">
+        {/* Header (About style motion) */}
+        <div className="text-center mb-16">
           <motion.h2
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4 md:mb-0"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl font-extrabold dark:text-white"
           >
-            আমাদের কোর্স সমূহ
+            আমাদের{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300">
+              কোর্সসমূহ
+            </span>
           </motion.h2>
-          <motion.button
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="bg-blue-500 text-white px-8 py-3 rounded-lg shadow-xl hover:bg-blue-600 transition duration-300 font-semibold"
-          >
-            সকল কোর্স সমূহ
-          </motion.button>
+          <div className="w-24 h-1.5 bg-blue-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        {/* Course Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1  md:grid-cols-3 gap-10">
           {coursesData.map((course, index) => (
             <CourseCard key={course.id} course={course} index={index} />
           ))}

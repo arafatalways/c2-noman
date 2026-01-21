@@ -1,5 +1,6 @@
 import FrontLayout from "@/components/layout/FrontLayout";
 import AboutPage from "@/pages/AboutPage";
+import ArticlePage from "@/pages/ArticlePage";
 import ContactPage from "@/pages/ContactPage";
 import CoursePage from "@/pages/CoursePage";
 import FAQPage from "@/pages/FAQPage";
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
       {
         path: "/faq",
         Component: FAQPage,
+      },
+      {
+        path: "/article",
+        Component: ArticlePage,
       },
     ],
   },

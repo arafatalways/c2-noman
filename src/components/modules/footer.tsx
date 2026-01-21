@@ -21,7 +21,7 @@ interface SocialLinkItem {
 const footerLinks: LinkItem[] = [
   { title: "আমাদের সম্পর্কে", href: "/about" },
   { title: "কোর্সসমূহ", href: "/courses" },
-  { title: "প্রবন্ধ ও রচনা", href: "/faq" },
+  { title: "প্রবন্ধ ও রচনা", href: "/article" },
   { title: "সাধারণ জিজ্ঞাসা", href: "contact" },
 ];
 
@@ -59,10 +59,10 @@ const Footer: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-4"
+            className="flex flex-col items-start gap-4" // ✅ flex-col + gap-4 দিয়ে icon distance ঠিক করা
           >
-            <div className="flex items-center">
-              <img className="w-32" src="../logo.png" alt="logo" />
+            <div>
+              <img className="w-46" src="../logo.png" alt="logo" />
             </div>
 
             <div className="flex gap-3">

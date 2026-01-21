@@ -4,6 +4,7 @@ import FAQSection from "@/components/modules/faqSection";
 import Hero from "@/components/modules/hero";
 import About from "@/components/modules/about";
 import VideoSection from "@/components/modules/videoSection";
+import ArticleSection from "@/components/modules/articleSection";
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <Hero />
       <Course />
       <About />
+      <ArticleSection />
       <VideoSection />
       <FAQSection />
       <ContactSection />

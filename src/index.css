@@ -6,7 +6,12 @@
 html,
 body {
   width: 100%;
-  overflow-x: hidden;
+}
+body,
+.my-bengali-text,
+.text-gray-900 {
+  font-family:
+    "Noto Sans Bengali", sans-serif !important; /* এখানে আপনার ফন্টের নাম দিন */
 }
 
 @theme inline {

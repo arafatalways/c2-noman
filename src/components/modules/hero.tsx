@@ -15,30 +15,32 @@ export default function HeroSection() {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#FFF9E9]/90 dark:bg-slate-900/90" />
+      <div className="absolute inset-0 bg-[#FFFFFF]/90 dark:bg-slate-900/90" />
 
       <div className="relative z-10 my-container overflow-x-hidden">
         <div className="flex flex-col md:flex-row items-center gap-12 max-w-full overflow-x-hidden">
           {/* ================= TEXT SIDE ================= */}
           <div className="relative md:w-1/2 text-center md:text-left max-w-full overflow-x-hidden">
-            {/* Floating visuals (Desktop only, SAFE) */}
-            <div className=" pointer-events-none absolute inset-0 overflow-hidden">
-              <motion.img
-                src="/book.webp"
-                alt="Floating Book"
-                className="absolute lg:top-1 top-12 left-0 w-20 opacity-80"
-                style={{ transform: "translateX(-40%)" }}
-                animate={{ y: [0, -14, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
-
+            {/* ✅ Floating visuals (Desktop only, SAFE) */}
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
               <motion.img
                 src="/saturn.webp"
                 alt="Floating Planet"
-                className="absolute top-40 right-0 w-20 opacity-80"
+                className="absolute top-40 right-0 w-25 opacity-80"
                 style={{ transform: "translateX(40%)" }}
                 animate={{ y: [0, -18, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
+              />
+            </div>
+
+            {/* ✅ Book.webp ঠিক “শুরু হোক জ্ঞানার্জন এখান থেকেই” লাইনটির উপরে */}
+            <div className="relative mb-3 flex justify-center md:justify-start">
+              <motion.img
+                src="/book.webp"
+                alt="Floating Book"
+                className="w-24 opacity-80"
+                animate={{ y: [0, -14, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
               />
             </div>
 
@@ -46,7 +48,7 @@ export default function HeroSection() {
               শুরু হোক জ্ঞানার্জন এখান থেকেই
             </p>
 
-            <h1 className="text-4xl font-bold text-blue-400 mb-5 leading-tight">
+            <h1 className="text-4xl font-bold text-[#06384E] mb-5 leading-tight">
               আন নাহ্দা ইসলামিক <br /> ইনস্টিটিউট…
             </h1>
 
