@@ -8,6 +8,7 @@ import {
   Instagram,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 
 export default function ContactSection() {
   const { t } = useTranslation();
@@ -59,12 +60,12 @@ export default function ContactSection() {
             <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200 mb-2">
               {t("website", "ওয়েবসাইট")}
             </h3>
-            <a
-              href="https://c2-noman-ia6o.vercel.app/"
+            <Link
+              to="https://c2-noman-ia6o.vercel.app/"
               className="text-indigo-600 hover:underline"
             >
               https://c2-noman-ia6o.vercel.app/
-            </a>
+            </Link>
           </div>
 
           {/* SOCIAL */}
@@ -74,18 +75,18 @@ export default function ContactSection() {
             </h3>
 
             <div className="flex gap-4 text-gray-500">
-              <a href="#" className="hover:text-indigo-600">
+              <Link to="#" className="hover:text-indigo-600">
                 <Facebook />
-              </a>
-              <a href="#" className="hover:text-indigo-600">
+              </Link>
+              <Link to="#" className="hover:text-indigo-600">
                 <Twitter />
-              </a>
-              <a href="#" className="hover:text-indigo-600">
+              </Link>
+              <Link to="#" className="hover:text-indigo-600">
                 <Youtube />
-              </a>
-              <a href="#" className="hover:text-indigo-600">
+              </Link>
+              <Link to="#" className="hover:text-indigo-600">
                 <Instagram />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
