@@ -21,13 +21,13 @@ export default function Header() {
 
   return (
     // হেডার সেকশন: ছবির ব্যাকগ্রাউন্ড কালার এবং ডার্ক মোড কালার
-    <header className="sticky my-container top-4 z-50 border-b border-gray-200 bg-[#FFFFFF] backdrop-blur-lg transition-all duration-300 dark:border-[#262E40] dark:bg-[#262E40] rounded-xl shadow-md">
+    <header className="sticky my-container top-4 z-50 border border-gray-200 bg-white backdrop-blur-lg transition-all duration-300 dark:border-[#262E40] dark:bg-[#262E40] rounded-xl shadow-xl">
       <div className="my-container">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex md:h-22 h-20 items-center justify-between">
           <div className="flex items-center gap-12">
             <Link className="flex items-center gap-2 text-teal-600" to="/">
               <span className="hidden text-xl font-bold text-gray-900 dark:text-white sm:block">
-                <img className="w-28" src="../logo.png" alt="logo" />
+                <img className="w-32" src="../logo.png" alt="logo" />
               </span>
             </Link>
           </div>
@@ -42,7 +42,7 @@ export default function Header() {
                     <li key={link.name}>
                       <Link
                         to={link.path}
-                        className="text-[#001f5b] hover:text-[#2A4976] dark:text-gray-300 dark:hover:text-white transition duration-200"
+                        className="text-[#06384E] hover:text-[#2A4976] dark:text-gray-300 dark:hover:text-white transition duration-200"
                       >
                         {link.name}
                       </Link>

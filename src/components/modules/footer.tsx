@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaYoutube, FaWhatsapp } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 
 // উদাহরণ ডেটা (আপনার আসল ডেটা দিয়ে পরিবর্তন করুন)
 
@@ -10,35 +8,6 @@ const footerLinks = [
   { title: "কোর্সসমূহ", href: "/courses" },
   { title: "প্রবন্ধ ও রচনা", href: "/article" },
   { title: "সাধারণ জিজ্ঞাসা", href: "contact" },
-];
-
-interface SocialLinkItem {
-  icon: React.ReactNode;
-  href: string;
-  color: string;
-}
-
-const socialLinks: SocialLinkItem[] = [
-  {
-    icon: <FaWhatsapp size={18} />,
-    href: "https://linkedin.com",
-    color: "bg-[#21C063] hover:bg-[#21C063]",
-  },
-  {
-    icon: <FaFacebook size={18} />,
-    href: "https://facebook.com",
-    color: "bg-[#0866FF] hover:bg-[#0866FF]",
-  },
-  {
-    icon: <FaYoutube size={18} />,
-    href: "https://twitter.com",
-    color: "bg-[#FF0033] hover:bg-[#FF0033]",
-  },
-  {
-    icon: <MdEmail size={18} />,
-    href: "https://twitter.com",
-    color: "bg-[#FBBC04] hover:bg-[#FBBC04]", // ✅ double # ঠিক করলাম
-  },
 ];
 
 const FooterComponent = () => {
@@ -57,23 +26,9 @@ const FooterComponent = () => {
           <div className="shrink-0">
             {/* <img className="w-46" src="../logo.png" alt="logo" /> */}
             {/* Placeholder for image */}
-            <div className="w-46 h-20 mt-6 mb-4 flex items-center justify-center">
+            <div className="w-80 h-56 -mt-3 flex items-center justify-center">
               <img src="../logo.png" alt="" />
             </div>
-          </div>
-          <div className="flex gap-3">
-            {socialLinks.map((social, i) => (
-              <motion.a
-                key={i}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-                whileHover={{ y: -4 }}
-                className={`w-9 h-9 flex items-center justify-center rounded-full text-white shadow-md transition ${social.color}`}
-              >
-                {social.icon}
-              </motion.a>
-            ))}
           </div>
         </motion.div>
 
