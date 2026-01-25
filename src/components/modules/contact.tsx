@@ -75,7 +75,7 @@ export default function ContactSection() {
               {t("email", "ইমেইল")}
             </h3>
             <p className="text-gray-600 dark:text-gray-400">
-              annahdaislamicademy@gmail.com
+              annahdaislamicinstitute@gmail.com
             </p>
           </div>
 

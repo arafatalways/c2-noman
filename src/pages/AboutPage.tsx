@@ -1,9 +1,9 @@
-import About from "@/components/modules/about";
+import AboutInstitute from "@/components/modules/about";
 
 export default function AboutPage() {
   return (
     <div>
-      <About />
+      <AboutInstitute />
     </div>
   );
 }

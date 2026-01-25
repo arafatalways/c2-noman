@@ -1,29 +1,25 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ModeToggle } from "@/components/dark-mode/mode-toggle";
-import { X } from "lucide-react"; // X আইকন ইমপোর্ট করা হয়েছে ক্লোজ বাটনের জন্য
-import { Transition } from "@headlessui/react"; // Headless UI Transition ইমপোর্ট করা হয়েছে
+import { X } from "lucide-react";
+import { Transition } from "@headlessui/react";
 import { FaSearch } from "react-icons/fa";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false); // মেনু ওপেন/ক্লোজ স্টেট
-
-  // ছবির সাথে মিল রেখে বাংলা ন্যাভিগেশন লিংক
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: " মূলপাতা", path: "/" },
-    { name: "বিভাগ সমূহ", path: "/faq" },
+    { name: "বিভাগ সমূহ", path: "/academy" },
     { name: "প্রবন্ধ ও রচনা", path: "/article" },
     { name: "কোর্সসমূহ", path: "/courses" },
     { name: "পরিচিতি", path: "/about" },
-    // { name: "যোগাযোগ", path: "/education" },
   ];
 
   return (
-    // হেডার সেকশন: ছবির ব্যাকগ্রাউন্ড কালার এবং ডার্ক মোড কালার
     <header className="sticky my-container top-4 z-50 border border-gray-200 bg-white backdrop-blur-lg transition-all duration-300 dark:border-[#262E40] dark:bg-[#262E40] rounded-xl shadow-xl">
       <div className="my-container">
-        <div className="flex md:h-22 h-20 items-center justify-between">
+        <div className="flex -ml-6 md:h-22 h-20 items-center justify-between">
           <div className="flex items-center gap-12">
             <Link className="flex items-center gap-2 text-teal-600" to="/">
               <span className="hidden text-xl font-bold text-gray-900 dark:text-white sm:block">
@@ -32,7 +28,6 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop Links (md স্ক্রিন থেকে দেখাবে) */}
           <div className="hidden lg:block">
             <div className="ml-50 flex items-center gap-2.5">
               <FaSearch />
@@ -57,14 +52,13 @@ export default function Header() {
             <div className="flex items-center gap-3">
               <Link
                 to="/contact"
-                className="hidden sm:block rounded-lg bg-[#0084D1] px-6 py-2 text-white font-semibold shadow-md hover:bg-[#315382] transition duration-200"
+                className="hidden sm:block rounded-lg bg-[#2A4976] px-6 py-2 text-white font-semibold shadow-md hover:bg-[#315382] transition duration-200"
               >
                 যোগাযোগ
               </Link>
               <ModeToggle />
             </div>
 
-            {/* মোবাইল মেনু বাটন */}
             <div className="block lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -93,7 +87,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* মোবাইল ড্রপডাউন মেনু */}
       <Transition
         show={isOpen}
         enter="transition ease-out duration-300 transform"
@@ -103,7 +96,7 @@ export default function Header() {
         leaveFrom="opacity-100 translate-x-0"
         leaveTo="opacity-0 translate-x-full"
       >
-        <div className="lg:hidden absolute top-16 right-0 w-90 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg rounded-b-xl">
+        <div className="lg:hidden absolute top-16 right-0 w-70 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg rounded-b-xl">
           <nav className="flex flex-col space-y-4 p-4">
             {navLinks.map((link) => (
               <Link
@@ -117,9 +110,15 @@ export default function Header() {
             ))}
             <Link
               to="/contact"
-              className="block w-full text-center rounded-lg bg-[#2A4976] py-2 text-white font-semibold mt-4 hover:bg-[#315382] transition duration-200"
+              className="block text-center md:hidden rounded-lg bg-[#2A4976] py-2 text-white font-semibold mt-4 hover:bg-[#315382] transition duration-200"
             >
               যোগাযোগ
+            </Link>
+
+            <Link className=" text-teal-600" to="/">
+              <span className="text-xl font-bold text-gray-900 dark:text-white">
+                <img className="w-46 -ml-8" src="../logo.png" alt="logo" />
+              </span>
             </Link>
           </nav>
         </div>

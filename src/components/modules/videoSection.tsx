@@ -1,16 +1,22 @@
 const videos = [
   {
     title: "শিক্ষা বিষয়ক ভিডিও",
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F836524832758272%2F&show_text=false&width=560&t=0",
   },
   {
     title: "তারবিয়া বিষয়ক ভিডিও",
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1009960712193618%2F&show_text=false&width=560&t=0",
   },
+
   {
     title: "জীবনযাপন বিষয়ক ভিডিও",
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1895917034620555%2F&show_text=false&width=560&t=0",
   },
+
+  // {
+  //   title: "জীবনযাপন বিষয়ক ভিডিও",
+  //   url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1423106042701926%2F&show_text=false&width=560&t=0",
+  // },
 ];
 
 const gradients = [
@@ -25,7 +31,7 @@ export default function VideoSection() {
       <div className="my-container text-center">
         {/* 🔹 Header */}
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-          জীবনমুখী ভিডিওসমূহ
+          আমাদের ভিডিওসমূহ
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mb-10">
           শিক্ষা, তারবিয়া, ও জীবনযাপনের বিভিন্ন বিষয়ে আমাদের বিশেষ ভিডিও
@@ -47,7 +53,7 @@ export default function VideoSection() {
                 {/* 🧱 Card */}
                 <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-gray-700">
                   <iframe
-                    className="w-full h-56 md:h-64"
+                    className="w-full h-56 md:h-56"
                     src={video.url}
                     title={video.title}
                     frameBorder="0"

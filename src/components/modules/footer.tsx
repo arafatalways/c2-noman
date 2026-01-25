@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-// উদাহরণ ডেটা (আপনার আসল ডেটা দিয়ে পরিবর্তন করুন)
-
 const footerLinks = [
   { title: "আমাদের সম্পর্কে", href: "/about" },
   { title: "কোর্সসমূহ", href: "/courses" },
@@ -12,35 +10,30 @@ const footerLinks = [
 
 const FooterComponent = () => {
   return (
-    // flex-col by default (mobile), md:flex-row on medium screens and up
-    // gap-8 provides space between columns on all devices
     <div className="my-container">
       <div className="flex flex-col md:flex-row justify-between items-start gap-8 p-4">
-        {/* Column 1: Logo and Social Icons */}
+        {/* Column 1: Logo */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-start gap-4"
+          className="flex flex-col items-center md:items-start gap-4 text-center md:text-left"
         >
           <div className="shrink-0">
-            {/* <img className="w-46" src="../logo.png" alt="logo" /> */}
-            {/* Placeholder for image */}
             <div className="w-80 h-56 -mt-3 flex items-center justify-center">
-              <img src="../logo.png" alt="" />
+              <img src="../logo.png" alt="logo" />
             </div>
           </div>
         </motion.div>
 
-        {/* Column 2-4: Links, Contact, Other Info (uses a wrapper for stacking) */}
-        {/* This div wraps the remaining columns and makes them stack on mobile and form a grid on larger screens */}
+        {/* Other Columns */}
         <div className="flex flex-col md:grid md:grid-cols-3 gap-8 w-full md:w-auto">
-          {/* Links Column */}
+          {/* Links */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex flex-col items-start gap-4"
+            className="flex flex-col items-center md:items-start gap-4 text-center md:text-left"
           >
             <h4 className="mb-4 font-semibold text-gray-800 dark:text-white">
               প্রয়োজনীয় লিংক
@@ -59,30 +52,30 @@ const FooterComponent = () => {
             </ul>
           </motion.div>
 
-          {/* Contact Column */}
+          {/* Contact */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col items-start gap-4"
+            className="flex flex-col items-center md:items-start gap-4 text-center md:text-left"
           >
             <h4 className="mb-4 font-semibold text-gray-800 dark:text-white">
               সহযোগিতা
             </h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              ইমেইল: annahdaislamicademy@gmail.com
+              ইমেইল: annahdaislamicinstitute@gmail.com
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               মোবাইল: +880 1883-595268
             </p>
           </motion.div>
 
-          {/* Other Info Column */}
+          {/* Other Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col items-start gap-4"
+            className="flex flex-col items-center md:items-start gap-4 text-center md:text-left"
           >
             <h4 className="mb-4 font-semibold text-gray-800 dark:text-white">
               অন্যান্য

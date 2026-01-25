@@ -20,7 +20,7 @@ const coursesData: CourseItemData[] = [
     id: 1,
     title: "রিডিং শেখার তরিকা",
     subtitle: "(Learn How to Read)",
-    academy: "An Nahda Academy",
+    academy: "An Nahda Institute",
     lessons: 6,
     students: 16,
     type: "রেকর্ডেড কোর্স",
@@ -32,7 +32,7 @@ const coursesData: CourseItemData[] = [
     id: 2,
     title: "শিক্ষক সার্টিফিকেশন কোর্স",
     subtitle: "(Teachers Certification Course)",
-    academy: "An Nahda Academy",
+    academy: "An Nahda Institute",
     lessons: 10,
     students: 137,
     type: "লাইভ কোর্স",
@@ -44,7 +44,7 @@ const coursesData: CourseItemData[] = [
     id: 3,
     title: "নূরানী মুয়াল্লিম ট্রেনিং",
     subtitle: "(Noorani Muallim Training)",
-    academy: "An Nahda Academy",
+    academy: "An Nahda Institute",
     lessons: 6,
     students: 41,
     type: "রেকর্ডেড কোর্স",
@@ -136,7 +136,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
           <span className={`text-3xl font-extrabold ${color.price}`}>
             {course.price}
           </span>
-          <button className="bg-blue-600 text-white px-3 py-2 rounded-md shadow hover:bg-blue-700 transition flex items-center gap-1">
+          <button className="bg-[#2A4976] text-white px-3 py-2 rounded-md shadow hover:bg-[#315382] transition flex items-center gap-1">
             বিস্তারিত দেখুন <ArrowRight className="w-4 h-4" />
           </button>
         </div>

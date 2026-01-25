@@ -1,152 +1,118 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Target, Lightbulb, Handshake, CheckCircle2 } from "lucide-react";
-
-// Define the interface for a single speciality item
-interface SpecialityItemData {
-  title: string;
-  icon: React.ElementType; // Correct type for an icon component
-  description: string[];
-  color: string;
-  lightBg: string;
-  iconColor: string;
-}
-
-const specialitiesData: SpecialityItemData[] = [
-  {
-    title: "লক্ষ্য উদ্দেশ্য",
-    icon: Target,
-    description: [
-      "আদর্শ, নৈতিকতা ও ঈমানভিত্তিক একটি যুগ-সচেতন প্রজন্ম গড়ে তোলাই আমাদের মূল লক্ষ্য।",
-      "কুরআন ও সুন্নাহর আলোকে আধুনিনাক একাডেমিক শিক্ষা ও প্রয়োজনীয় দক্ষতার সমন্বয়ে আমরা শিক্ষার্থীদের ভবিষ্যতের জন্য প্রস্তুত করি—ইনশা আল্লাহ।",
-    ],
-    color: "from-pink-500 to-rose-500",
-    lightBg: "bg-pink-50 dark:bg-pink-900/20",
-    iconColor: "text-pink-600 dark:text-pink-400",
-  },
-  {
-    title: "মূল্যবোধ",
-    icon: Handshake,
-    description: [
-      "ইসলামী আদর্শ, সততা ও শালীনতার উপর দাঁড়িয়ে আমরা মানসম্মত শিক্ষা, শৃঙ্খলা এবং দায়িত্বশীলতা গড়ে তোলায় বিশ্বাস করি।",
-      " Deen ও Dunya-র মধ্যে ভারসাম্য বজায় রেখে শিক্ষার্থীদের পূর্ণাঙ্গ মানুষ হিসেবে তৈরি করাই আমাদের অঙ্গীকার।",
-    ],
-    color: "from-blue-500 to-cyan-500",
-    lightBg: "bg-blue-50 dark:bg-blue-900/20",
-    iconColor: "text-blue-600 dark:text-blue-400",
-  },
-  {
-    title: "সেবা",
-    icon: Lightbulb,
-    description: [
-      "কুরআন ও ইসলামিক স্টাডিজ ভিত্তিক শিক্ষা আধুনিক ও মানসম্মত একাডেমিক কারিকুলাম",
-      "নৈতিকতা ও চরিত্র গঠনমূলক কার্যক্রম	দক্ষতা উন্নয়ন ও যুগোপযোগী স্কিল ট্রেনিং	অভিভাবক-বান্ধব ও শৃঙ্খলাপূর্ণ শিক্ষাপরিবেশ",
-    ],
-    color: "from-orange-500 to-amber-500",
-    lightBg: "bg-orange-50 dark:bg-orange-900/20",
-    iconColor: "text-orange-600 dark:text-orange-400",
-  },
-];
-
-// Define props interface for the card component
-interface SpecialityCardProps {
-  item: SpecialityItemData;
-  index: number;
-}
-
-const SpecialityCard: React.FC<SpecialityCardProps> = ({ item, index }) => {
+const AboutInstitute = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -10 }}
-      className="relative group h-full"
-    >
-      {/* Background Gradient Blur (Hover Effect) */}
-      <div
-        // Note: 'bg-linear-to-r' must be defined in your Tailwind config or CSS
-        className={`absolute -inset-0.5 bg-linear-to-r ${item.color} rounded-2xl blur opacity-20 group-hover:opacity-100 transition duration-500`}
-      ></div>
+    <section className="bg-white dark:bg-[#0b1220] py-20 px-4 transition-colors">
+      <div className="max-w-5xl mx-auto text-center">
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+          An-Nahda Islamic Institute
+        </h2>
+        <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+          আদর্শ ও নৈতিকতা সম্পন্ন যুগ-সচেতন প্রজন্ম গড়ার এক অনন্য প্রতিষ্ঠান
+        </p>
 
-      <div className="relative h-full bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-xl flex flex-col border border-gray-100 dark:border-slate-800">
-        <div className="flex items-center mb-6">
-          <div
-            className={`p-4 rounded-xl ${item.lightBg} ${item.iconColor} transform group-hover:scale-110 transition-transform duration-300`}
-          >
-            {/* Render the icon component passed via props */}
-            <item.icon className="w-8 h-8" />
-          </div>
-          <h3 className="ml-4 text-2xl font-bold text-gray-800 dark:text-white">
-            {item.title}
+        {/* Decorative Divider */}
+        <div className="flex items-center justify-center my-8">
+          <span className="w-20 h-[1px] bg-[#2A4976]"></span>
+          <span className="mx-4 text-[#2A4976] text-xl">✦</span>
+          <span className="w-20 h-[1px] bg-[#2A4976]"></span>
+        </div>
+
+        {/* Intro Card */}
+        <div className="text-left bg-white dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 rounded-2xl p-6 md:p-8 space-y-5 text-gray-800 dark:text-gray-300 leading-relaxed">
+          <p>
+            সাম্প্রতিক কালে যখন নৈতিকতার অবক্ষয়, মূল্যবোধের সংকট ও ধর্মীয়
+            অজ্ঞতার দূষিত বাতাস আমাদের সামাজিক পরিবেশকে আবৃত্ত করে রেখেছে, তখন
+            কিছু প্রতিষ্ঠান আমাদের সমাজের মানুষদের জন্য আশার প্রদীপ হয়ে উঠে।
+          </p>
+
+          <p>
+            <span className="font-semibold text-gray-900 dark:text-white">
+              An-Nahda Islamic Institute
+            </span>{" "}
+            তেমনি একটি ব্যতিক্রমধর্মী সমাজ কল্যাণমূলক প্রতিষ্ঠান, যেটা ধর্মীয়
+            শিক্ষার পাশাপাশি আধুনিক জ্ঞান-বিজ্ঞান ও প্রশিক্ষণের মাধ্যমে একটি
+            সুশিক্ষিত, আত্মনির্ভরশীল এবং নৈতিকতাসম্পন্ন প্রজন্ম গড়ার লক্ষ্যে কাজ
+            করে যাচ্ছে।
+          </p>
+
+          <p>
+            আমাদের কাছে শিক্ষা মানে কেবল বইয়ের পাতা মুখস্থ করা নয়; শিক্ষা মানে
+            চিন্তার স্বচ্ছতা, চরিত্রের সৌন্দর্য এবং বাস্তব জীবনের চ্যালেঞ্জ
+            মোকাবিলার প্রস্তুতি।
+          </p>
+        </div>
+
+        {/* Sections */}
+        <InfoSection
+          title="১. সমন্বিত ও গবেষণাভিত্তিক কারিকুলাম"
+          items={[
+            "কুরআন ও ইসলামিক স্টাডিজ: বিশুদ্ধ আকিদা, ফিকহ, আরবি ভাষা ও আদব",
+            "আন্তর্জাতিক মানের একাডেমিক শিক্ষা: গণিত, বিজ্ঞান ও সমাজবিজ্ঞান",
+            "নৈতিকতা ও মূল্যবোধ: ভালো মানুষ হিসেবে গড়ে তোলা",
+          ]}
+        />
+
+        <InfoSection
+          title="২. আধুনিক দক্ষতা ও প্রযুক্তিগত জ্ঞান"
+          items={[
+            "বেসিক কম্পিউটার, টাইপিং ও ইন্টারনেট ব্যবহার",
+            "গ্রাফিক্স ডিজাইন, ভিডিও এডিটিং, ডিজিটাল মার্কেটিং",
+            "ডিজিটাল সচেতনতা ও সাইবার নিরাপত্তা",
+          ]}
+        />
+
+        <InfoSection
+          title="৩. বহুভাষিক যোগ্যতা"
+          items={[
+            "আরবি: কুরআনের ভাষা বোঝা ও কথোপকথন",
+            "ইংরেজি: স্পোকেন ও একাডেমিক দক্ষতা",
+            "বাংলা: শুদ্ধ উচ্চারণ ও প্রমিত ব্যবহার",
+          ]}
+        />
+
+        <InfoSection
+          title="৪. চারিত্রিক উৎকর্ষ ও নান্দনিকতা"
+          items={[
+            "সুন্দর হাতের লেখা ও ক্যালিগ্রাফি",
+            "চিত্রাংকন ও সৃজনশীলতা",
+            "লাইফ স্কিল ও নেতৃত্ব বিকাশ",
+          ]}
+        />
+
+        {/* Commitment */}
+        <div className="mt-14 text-left bg-white dark:bg-white/5 dark:to-white/5 border border-gray-200 dark:border-amber-500/20 rounded-2xl p-8">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            আমাদের অঙ্গীকার
           </h3>
-        </div>
-
-        <ul className="space-y-4 grow">
-          {item.description.map((point, idx) => (
-            <li
-              key={idx}
-              className="flex items-start text-gray-600 dark:text-gray-300"
-            >
-              <CheckCircle2
-                className={`w-5 h-5 mr-3 mt-1 shrink-0 ${item.iconColor}`}
-              />
-              <span className="text-sm leading-relaxed">{point}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* Bottom Decorative Line */}
-        <div
-          // Note: 'bg-linear-to-r' must be defined in your Tailwind config or CSS
-          className={`mt-6 h-1 w-0 group-hover:w-full transition-all duration-500 bg-linear-to-r ${item.color} rounded-full`}
-        ></div>
-      </div>
-    </motion.div>
-  );
-};
-
-const About: React.FC = () => {
-  return (
-    <section className="relative bg-white dark:bg-[#262E40] py-12 overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 -right-24 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="my-container relative z-10">
-        <div className="text-center mb-16">
-          {/* <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-blue-400 font-semibold tracking-widest uppercase text-sm"
-          >
-            কেন আমাদের পছন্দ করবেন?
-          </motion.span> */}
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl font-extrabold dark:text-white mt-3"
-          >
-            আমাদের{" "}
-            {/* Note: 'bg-linear-to-r' must be defined in your Tailwind config or CSS */}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300">
-              বিশেষত্ব
-            </span>
-          </motion.h2>
-          <div className="w-24 h-1.5 bg-blue-500 mx-auto mt-4 rounded-full"></div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {specialitiesData.map((item, index) => (
-            <SpecialityCard key={index} item={item} index={index} />
-          ))}
+          <ul className="list-disc pl-6 space-y-2 text-gray-800 dark:text-gray-300">
+            <li>ইসলামিক মূল্যবোধে অটল থাকা</li>
+            <li>একাডেমিক শিক্ষায় দক্ষ হওয়া</li>
+            <li>প্রযুক্তি ও ভাষায় পারদর্শী হওয়া</li>
+            <li>সমাজের জন্য আদর্শ হিসেবে গড়ে ওঠা</li>
+          </ul>
+          <p className="mt-5 font-semibold text-gray-900 dark:text-white">
+            আমরা কেবল পড়ালেখা করাই না, আমরা আগামীর নেতৃত্ব তৈরি করি।
+          </p>
         </div>
       </div>
     </section>
   );
 };
 
-export default About;
+const InfoSection = ({ title, items }: any) => (
+  <div className="mt-14 text-left">
+    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+      <span className="w-2 h-2 bg-[#2A4976] rounded-full"></span>
+      {title}
+    </h3>
+    <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-6">
+      <ul className="space-y-2 list-disc pl-5 text-gray-800 dark:text-gray-300">
+        {items.map((item: string, i: number) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+);
+
+export default AboutInstitute;
