@@ -1,7 +1,7 @@
 const videos = [
   {
     title: "শিক্ষা বিষয়ক ভিডিও",
-    url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F836524832758272%2F&show_text=false&width=560&t=0",
+    url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1423106042701926%2F&show_text=false&width=560&t=0",
   },
   {
     title: "তারবিয়া বিষয়ক ভিডিও",
@@ -12,11 +12,6 @@ const videos = [
     title: "জীবনযাপন বিষয়ক ভিডিও",
     url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1895917034620555%2F&show_text=false&width=560&t=0",
   },
-
-  // {
-  //   title: "জীবনযাপন বিষয়ক ভিডিও",
-  //   url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1423106042701926%2F&show_text=false&width=560&t=0",
-  // },
 ];
 
 const gradients = [
