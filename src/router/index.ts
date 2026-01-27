@@ -1,3 +1,6 @@
+import ArticleOne from "@/components/layout/articleOne";
+import ArticleThree from "@/components/layout/articleThree";
+import ArticleTwo from "@/components/layout/articleTwo";
 import FrontLayout from "@/components/layout/FrontLayout";
 import AboutPage from "@/pages/AboutPage";
 import AcademyPage from "@/pages/AcademyPage";
@@ -40,6 +43,18 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         Component: AboutPage,
+      },
+      {
+        path: "/article-three",
+        Component: ArticleThree,
+      },
+      {
+        path: "/article-two",
+        Component: ArticleTwo,
+      },
+      {
+        path: "/article-one",
+        Component: ArticleOne,
       },
     ],
   },

@@ -13,8 +13,8 @@ export default function HomePage() {
       <Hero />
       <Course />
       <Special />
-      <ArticleSection />
       <Academy />
+      <ArticleSection />
       <VideoSection />
       <FAQSection />
       <ContactSection />

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 /* ================= TYPES ================= */
 interface Article {
@@ -7,6 +8,7 @@ interface Article {
   description: string;
   imageUrl: string;
   altText: string;
+  slug: string;
 }
 
 interface ArticleCardProps extends Article {
@@ -26,47 +28,50 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   description,
   imageUrl,
   altText,
+  slug,
   index,
 }) => {
   const gradient = gradients[index % gradients.length];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -10 }}
-      className="relative group h-full"
-    >
-      {/* 🔥 Gradient Glow / Hover effect */}
-      <div
-        className={`absolute -inset-0.5 rounded-xl blur opacity-20 group-hover:opacity-100 transition duration-500 bg-linear-to-r ${gradient}`}
-      />
-
-      {/* 🧱 Card */}
-      <div className="relative h-full bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-800 flex flex-col overflow-hidden">
-        {/* Image */}
-        <img
-          src={imageUrl}
-          alt={altText}
-          className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-500 group-hover:scale-105"
-        />
-
-        {/* Text */}
-        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
-          {title}
-        </h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-          {description}
-        </p>
-
-        {/* 🔹 Bottom Gradient Line (About style) */}
+    <Link to={`/articles/${slug}`} className="block h-full">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.2 }}
+        viewport={{ once: true }}
+        whileHover={{ y: -10 }}
+        className="relative group h-full cursor-pointer"
+      >
+        {/* 🔥 Gradient Glow / Hover effect */}
         <div
-          className={`mt-auto h-1 w-0 group-hover:w-full transition-all duration-500 rounded-full bg-linear-to-r ${gradient}`}
+          className={`absolute -inset-0.5 rounded-xl blur opacity-20 group-hover:opacity-100 transition duration-500 bg-linear-to-r ${gradient}`}
         />
-      </div>
-    </motion.div>
+
+        {/* 🧱 Card */}
+        <div className="relative h-full bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-800 flex flex-col overflow-hidden">
+          {/* Image */}
+          <img
+            src={imageUrl}
+            alt={altText}
+            className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-500 group-hover:scale-105"
+          />
+
+          {/* Text */}
+          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+            {title}
+          </h3>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+            {description}
+          </p>
+
+          {/* 🔹 Bottom Gradient Line */}
+          <div
+            className={`mt-auto h-1 w-0 group-hover:w-full transition-all duration-500 rounded-full bg-linear-to-r ${gradient}`}
+          />
+        </div>
+      </motion.div>
+    </Link>
   );
 };
 
@@ -77,20 +82,23 @@ const ArticleSection: React.FC = () => {
       title: "ইসলামী শিক্ষার গুরুত্ব",
       description:
         "ইসলামী শিক্ষা মানুষের চরিত্র গঠনে গুরুত্বপূর্ণ ভূমিকা পালন করে।",
-      imageUrl: "../a-1.webp",
+      imageUrl: "../a-three.jfif",
       altText: "ইসলামী শিক্ষা",
+      slug: "../article-one",
     },
     {
       title: "নৈতিকতা ও আদর্শ জীবন",
       description: "নৈতিকতা মানুষের জীবনকে সুন্দর ও সুশৃঙ্খল করে তোলে।",
-      imageUrl: "../a-2.webp",
+      imageUrl: "../a-two.jfif",
       altText: "নৈতিকতা ও আদর্শ",
+      slug: "../article-two",
     },
     {
       title: "আধুনিক ও দ্বীনি শিক্ষার সমন্বয়",
       description: "দ্বীনি ও আধুনিক শিক্ষার সমন্বয় গড়ে তোলে আদর্শ প্রজন্ম।",
-      imageUrl: "../a-3.webp",
+      imageUrl: "../a-1.jfif",
       altText: "দ্বীনি ও আধুনিক শিক্ষা",
+      slug: "../article-three",
     },
   ];
 
