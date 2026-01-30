@@ -1,5 +1,3 @@
-// src/components/modules/CourseSection.tsx
-
 import React from "react";
 import { motion } from "framer-motion";
 

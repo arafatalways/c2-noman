@@ -1,5 +1,3 @@
-// src/components/modules/HeroSection.tsx
-
 import { BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
@@ -10,12 +8,11 @@ export default function HeroSection() {
       className="relative py-6 md:py-10 overflow-x-hidden"
       style={{
         backgroundImage: "url('/kover.png')",
-        backgroundSize: "120%", // 🔹 image একটু ছড়িয়ে দেওয়া
+        backgroundSize: "120%", //
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* ✅ EXTRA SOFT OVERLAY (background almost invisible) */}
       <div className="absolute inset-0 bg-white/98 dark:bg-slate-900/99" />
 
       <div className="relative z-10 my-container">
@@ -34,7 +31,7 @@ export default function HeroSection() {
               />
             </div>
 
-            {/* 📘 Floating Book — আরও উপরে */}
+            {/* 📘 Floating Book */}
             <div className="relative flex justify-center md:justify-start -mt-12 md:-mt-20 mb-2">
               <motion.img
                 src="/book.webp"

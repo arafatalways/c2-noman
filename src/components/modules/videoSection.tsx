@@ -5,7 +5,7 @@ const videos = [
   },
   {
     title: "তারবিয়া বিষয়ক ভিডিও",
-    url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1009960712193618%2F&show_text=false&width=560&t=0",
+    url: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1963561904555841%2F&show_text=false&width=560&t=0",
   },
 
   {
@@ -33,19 +33,18 @@ export default function VideoSection() {
           সংগ্রহ দেখুন
         </p>
 
-        {/* 🎥 Video Grid */}
+        {/* Video Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {videos.map((video, index) => {
             const gradient = gradients[index % gradients.length];
 
             return (
               <div key={index} className="relative group">
-                {/* 🔥 Gradient Glow Border */}
                 <div
                   className={`absolute -inset-0.5 bg-linear-to-r ${gradient} rounded-xl blur opacity-20 group-hover:opacity-100 transition duration-500`}
                 />
 
-                {/* 🧱 Card */}
+                {/* Card */}
                 <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-gray-700">
                   <iframe
                     className="w-full h-56 md:h-56"
@@ -62,7 +61,6 @@ export default function VideoSection() {
                     </h3>
                   </div>
 
-                  {/* 🌈 Bottom hover line */}
                   <div
                     className={`h-1 w-0 group-hover:w-full transition-all duration-500 bg-linear-to-r ${gradient}`}
                   />

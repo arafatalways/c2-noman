@@ -24,9 +24,9 @@ const coursesData: CourseItemData[] = [
     lessons: 6,
     students: 16,
     type: "রেকর্ডেড কোর্স",
-    price: "৳৮২০০",
+    price: "৳৫০০",
     imageAlt: "Reading course thumbnail",
-    imageUrl: "../course-1.png",
+    imageUrl: "../course.png",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const coursesData: CourseItemData[] = [
     lessons: 10,
     students: 137,
     type: "লাইভ কোর্স",
-    price: "৳৮৫০০",
+    price: "৳৫০০",
     imageAlt: "Teacher certification course thumbnail",
     imageUrl: "../course-2.png",
   },
@@ -48,7 +48,7 @@ const coursesData: CourseItemData[] = [
     lessons: 6,
     students: 41,
     type: "রেকর্ডেড কোর্স",
-    price: "৳৮৬০০",
+    price: "৳৫০০",
     imageAlt: "Noorani training course thumbnail",
     imageUrl: "../course-3.png",
   },
@@ -89,7 +89,6 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
       whileHover={{ y: -10 }}
       className="relative group h-full"
     >
-      {/* 🔥 Glow (same design, fixed rounding issue) */}
       <div
         className={`absolute -inset-0.5 bg-linear-to-r ${color.glow} rounded-2xl blur opacity-20 group-hover:opacity-100 transition duration-500`}
       />

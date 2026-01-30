@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { FaPhoneAlt } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
 
-// ✅ SocialLinkItem টাইপ
 interface SocialLinkItem {
   icon: React.ReactNode;
   href: string;
