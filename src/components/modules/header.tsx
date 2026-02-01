@@ -22,8 +22,8 @@ export default function Header() {
         <div className="flex -ml-6 md:h-22 h-20 items-center justify-between">
           <div className="flex items-center gap-12">
             <Link className="flex items-center gap-2 text-teal-600" to="/">
-              <span className="hidden text-xl font-bold text-gray-900 dark:text-white sm:block">
-                <img className="w-32" src="../logo.png" alt="logo" />
+              <span className=" text-xl font-bold text-gray-900 dark:text-white ">
+                <img className="w-28 md:w-32" src="../logo.png" alt="logo" />
               </span>
             </Link>
           </div>
